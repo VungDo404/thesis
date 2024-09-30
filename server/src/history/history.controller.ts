@@ -17,6 +17,7 @@ export class HistoryController {
 
     @Post()
     create(@Body() createHistoryDto: CreateHistoryDto) {
+        
         return this.historyService.create(createHistoryDto);
     }
 

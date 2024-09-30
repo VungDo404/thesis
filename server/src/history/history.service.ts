@@ -9,11 +9,11 @@ import { History } from './schema/history.schema';
 export class HistoryService {
     constructor(@InjectModel(History.name) private historyModel: Model<History>) {}
     create(createHistoryDto: CreateHistoryDto) {
-        return new this.historyModel(createHistoryDto);
+        return new this.historyModel(createHistoryDto).save();
     }
 
     findAll() {
-        return this.historyModel.find();
+        return this.historyModel.find().exec();
     }
 
     findOne(id: string) {
